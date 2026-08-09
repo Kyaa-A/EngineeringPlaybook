@@ -1,0 +1,4 @@
+interface:
+  display_name: "Engineer Project"
+  short_description: "Guide projects from discovery through release"
+  default_prompt: "Use $engineer-project to guide this project from discovery through verified release."

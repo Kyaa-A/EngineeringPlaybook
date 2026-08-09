@@ -1,0 +1,6 @@
+---
+description: Apply the Engineering Playbook lifecycle and quality gates
+alwaysApply: true
+---
+
+Read `AGENTS.md` as the canonical project instructions. Route non-trivial work through `skills/engineer-project/SKILL.md`. Do not duplicate or weaken those rules here.

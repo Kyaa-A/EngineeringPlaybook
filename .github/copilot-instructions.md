@@ -1,0 +1,1 @@
+Read `AGENTS.md` as the canonical engineering instructions. For non-trivial project work, follow `skills/engineer-project/SKILL.md` and load only the relevant lifecycle chapter. Require approved PRD, TDD, and roadmap before greenfield implementation, and provide fresh verification evidence before claiming completion.
