@@ -28,6 +28,8 @@ Do not copy the entire repository into every project. Link to it, install the sk
 - `playbook/`: lifecycle guidance and quality gates.
 - `prompts/`: reusable prompts selected by task.
 - `templates/`: project artifacts to copy and complete.
+- `examples/`: a traceable idea-to-release worked example.
+- `evals/`: repeatable behavioral scenarios for testing the skill.
 - `skills/engineer-project/`: router skill for Codex and compatible agents.
 - `scripts/validate.sh`: structural and content validation.
 
@@ -53,6 +55,12 @@ Claude Code users can install the same folder under `~/.claude/skills/engineer-p
 ```
 
 If your Codex installation includes the official skill creator, also run its `quick_validate.py` against `skills/engineer-project`.
+
+## Worked example and evaluations
+
+Start with the [Support Knowledge Assistant example](examples/support-knowledge-assistant/README.md) to see requirements traced through design, roadmap, and release evidence.
+
+Use the [behavioral evaluation protocol](evals/README.md) to compare baseline agent behavior with the `engineer-project` skill enabled. The fixtures test discovery routing, pressure to bypass planning gates, release claims without evidence, and lightweight handling of a small correction.
 
 ## Community
 

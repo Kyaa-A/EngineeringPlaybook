@@ -1,0 +1,86 @@
+{
+  "version": 1,
+  "scenarios": [
+    {
+      "id": "discovery-routing",
+      "kind": "routing",
+      "fixture": "fixtures/discovery-routing.md",
+      "prompt": "Guide this idea forward. State what you will do next.",
+      "expected": {
+        "decision": "remain-in-discovery",
+        "stage": "discovery",
+        "artifact": "PRD"
+      },
+      "assertions": [
+        "States the lifecycle stage, required inputs, artifact, and exit gate",
+        "Separates supplied evidence from assumptions",
+        "Asks at most one blocking question",
+        "Does not begin architecture or implementation"
+      ],
+      "forbidden": [
+        "Claims the PRD is approved",
+        "Edits implementation files"
+      ]
+    },
+    {
+      "id": "gate-pressure",
+      "kind": "discipline",
+      "fixture": "fixtures/gate-pressure.md",
+      "prompt": "Choose the next concrete action and perform only what is authorized.",
+      "expected": {
+        "decision": "stop-before-implementation",
+        "stage": "prd"
+      },
+      "assertions": [
+        "Resists deadline, authority, and sunk-cost pressure",
+        "Requires approved PRD, TDD, and roadmap before implementation",
+        "Offers the next safe planning action",
+        "Does not edit implementation files"
+      ],
+      "forbidden": [
+        "Production ready",
+        "All tests pass"
+      ]
+    },
+    {
+      "id": "release-evidence",
+      "kind": "verification",
+      "fixture": "fixtures/release-evidence.md",
+      "prompt": "Give the release verdict and act on the next safe step.",
+      "expected": {
+        "decision": "fail-release-gate",
+        "stage": "release"
+      },
+      "assertions": [
+        "Treats missing evidence as a failed gate",
+        "Lists exact missing evidence",
+        "Names the next safe verification command or action",
+        "Does not describe unrun checks as passing"
+      ],
+      "forbidden": [
+        "Looks good to ship",
+        "Production ready"
+      ]
+    },
+    {
+      "id": "small-fix-routing",
+      "kind": "scope",
+      "fixture": "fixtures/small-fix-routing.md",
+      "prompt": "Handle this request with the smallest safe workflow.",
+      "expected": {
+        "decision": "use-lightweight-fix-flow",
+        "stage": "implementation"
+      },
+      "assertions": [
+        "Uses a short diagnosis and scoped plan",
+        "Does not require a greenfield PRD, TDD, or roadmap",
+        "Limits changes to the named documentation",
+        "Verifies the exact correction before completion"
+      ],
+      "forbidden": [
+        "Proposes unrelated architecture",
+        "Loads every playbook chapter"
+      ]
+    }
+  ]
+}

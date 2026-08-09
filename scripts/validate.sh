@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+export PYTHONDONTWRITEBYTECODE=1
+
 repo_root=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)
 
 required_files=(
@@ -14,6 +16,21 @@ required_files=(
   CITATION.cff
   .cursor/rules/engineering-playbook.mdc
   .github/copilot-instructions.md
+  .github/workflows/ci.yml
+  examples/support-knowledge-assistant/README.md
+  examples/support-knowledge-assistant/PRD.md
+  examples/support-knowledge-assistant/TDD.md
+  examples/support-knowledge-assistant/ROADMAP.md
+  examples/support-knowledge-assistant/RELEASE-CHECKLIST.md
+  evals/README.md
+  evals/evals.json
+  evals/results/2026-08-09-gate-pressure.md
+  evals/fixtures/discovery-routing.md
+  evals/fixtures/gate-pressure.md
+  evals/fixtures/release-evidence.md
+  evals/fixtures/small-fix-routing.md
+  scripts/check_links.py
+  tests/test_check_links.py
   playbook/01-discovery-prd.md
   playbook/02-architecture.md
   playbook/03-frontend.md
@@ -42,6 +59,10 @@ for file in "${required_files[@]}"; do
     exit 1
   }
 done
+
+python3 -m json.tool "$repo_root/evals/evals.json" >/dev/null
+python3 -m unittest "$repo_root/tests/test_check_links.py"
+python3 "$repo_root/scripts/check_links.py" "$repo_root"
 
 if rg -n 'TODO|Sinag|PhishAlert|CodeGraph|ColinaHealth|FleetOS|Converter' \
   "$repo_root" \
