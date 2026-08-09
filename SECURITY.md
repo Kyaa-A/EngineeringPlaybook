@@ -4,7 +4,7 @@ Engineering Playbook is primarily documentation and agent instruction, with a sh
 
 ## Reporting a vulnerability
 
-Report security concerns privately to **asnaripacalna@gmail.com** rather than opening a public issue. Include:
+Report security concerns privately to **a.pacalna@asnari.tech** rather than opening a public issue. Include:
 
 - a description of the issue and impact;
 - the affected file and lines; and

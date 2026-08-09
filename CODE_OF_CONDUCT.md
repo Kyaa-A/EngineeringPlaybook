@@ -34,7 +34,7 @@ This Code of Conduct applies within community spaces and when an individual offi
 
 ## Enforcement
 
-Report abusive, harassing, or otherwise unacceptable behavior to **asnaripacalna@gmail.com**. All complaints will be reviewed promptly and fairly, and the privacy and security of reporters will be respected.
+Report abusive, harassing, or otherwise unacceptable behavior to **a.pacalna@asnari.tech**. All complaints will be reviewed promptly and fairly, and the privacy and security of reporters will be respected.
 
 ## Enforcement Guidelines
 
