@@ -7,6 +7,11 @@ required_files=(
   AGENTS.md
   CLAUDE.md
   README.md
+  LICENSE
+  CODE_OF_CONDUCT.md
+  CONTRIBUTING.md
+  SECURITY.md
+  CITATION.cff
   .cursor/rules/engineering-playbook.mdc
   .github/copilot-instructions.md
   playbook/01-discovery-prd.md
