@@ -11,20 +11,20 @@ Determine the current lifecycle stage, load only its relevant guidance, produce 
 
 ## Workflow
 
-1. Read the repository's `AGENTS.md`.
-2. Classify the request as discovery, PRD, architecture, frontend, backend/data, AI/integrations, security/testing, or delivery/operations.
-3. Read the matching chapter under `playbook/` and the matching prompt only when it improves the task.
+1. Read the active project's instructions and classify the request as discovery, PRD, architecture, frontend, backend/data, AI/integrations, security/testing, or delivery/operations.
+2. Read only the matching guide: [discovery and PRD](references/discovery-prd.md), [architecture](references/architecture.md), [frontend](references/frontend.md), [backend and data](references/backend-data.md), [AI, RAG, and integrations](references/ai-rag-integrations.md), [security and testing](references/security-testing.md), or [delivery and operations](references/deployment-operations.md).
+3. Read a matching file under `references/prompts/` only when a focused reasoning prompt improves the task.
 4. For non-trivial greenfield work, require approved PRD, TDD, and roadmap before implementation.
 5. During implementation, test high-risk boundaries first and keep changes within approved scope.
 6. Before completion, run fresh verification and report exact evidence.
 
 ## Artifact routing
 
-- Product definition: copy `templates/PRD.md`.
-- Technical design: copy `templates/TDD.md`.
-- Phased delivery: copy `templates/ROADMAP.md`.
-- Durable technical choice: copy `templates/ADR.md`.
-- Production release: use `templates/RELEASE-CHECKLIST.md`.
+- Product definition: copy [PRD.md](assets/templates/PRD.md).
+- Technical design: copy [TDD.md](assets/templates/TDD.md).
+- Phased delivery: copy [ROADMAP.md](assets/templates/ROADMAP.md).
+- Durable technical choice: copy [ADR.md](assets/templates/ADR.md).
+- Production release: use [RELEASE-CHECKLIST.md](assets/templates/RELEASE-CHECKLIST.md).
 
 ## Guardrails
 

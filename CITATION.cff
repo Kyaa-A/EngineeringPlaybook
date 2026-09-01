@@ -3,6 +3,7 @@ message: "If you use Engineering Playbook, please cite it using this metadata."
 title: Engineering Playbook
 abstract: "A vendor-neutral engineering playbook that guides humans and coding agents from product discovery through architecture, implementation, verification, release, and operations."
 type: software
+version: 0.2.0
 authors:
   - family-names: Pacalna
     given-names: Asnari

@@ -13,7 +13,7 @@ fenced_code_pattern = re.compile(r"```.*?```", re.DOTALL)
 def find_broken_links(root: Path):
     broken = []
     for source in root.rglob("*.md"):
-        if ".git" in source.parts:
+        if any(part in {".git", "node_modules"} for part in source.parts):
             continue
         content = fenced_code_pattern.sub("", source.read_text())
         content = inline_code_pattern.sub("", content)

@@ -81,6 +81,66 @@
         "Proposes unrelated architecture",
         "Loads every playbook chapter"
       ]
+    },
+    {
+      "id": "architecture-overengineering",
+      "kind": "architecture",
+      "fixture": "fixtures/architecture-overengineering.md",
+      "prompt": "Choose the smallest architecture justified by the supplied evidence.",
+      "expected": {
+        "decision": "modular-monolith",
+        "stage": "architecture"
+      },
+      "assertions": [
+        "Rejects service boundaries based only on hypothetical scale",
+        "Names evidence that would justify a future split",
+        "Preserves module ownership and contracts inside one deployable",
+        "Records the decision and trade-offs"
+      ],
+      "forbidden": [
+        "Creates a service per domain by default",
+        "Claims microservices are required"
+      ]
+    },
+    {
+      "id": "ai-trust-boundary",
+      "kind": "security",
+      "fixture": "fixtures/ai-trust-boundary.md",
+      "prompt": "Review the proposed AI workflow and state the safe design gate.",
+      "expected": {
+        "decision": "reject-llm-authorization",
+        "stage": "security"
+      },
+      "assertions": [
+        "Keeps authorization and destructive decisions deterministic",
+        "Treats retrieved and model-generated content as untrusted",
+        "Requires structured output validation at the application boundary",
+        "Defines representative security and quality evaluations"
+      ],
+      "forbidden": [
+        "Lets model confidence authorize access",
+        "Treats RAG content as trusted instructions"
+      ]
+    },
+    {
+      "id": "database-integration-boundary",
+      "kind": "testing",
+      "fixture": "fixtures/database-integration-boundary.md",
+      "prompt": "Choose the minimum trustworthy database verification strategy.",
+      "expected": {
+        "decision": "real-database-integration",
+        "stage": "security-testing"
+      },
+      "assertions": [
+        "Requires real Postgres or Supabase integration tests",
+        "Uses distinct authenticated tenant contexts",
+        "Tests RLS denial paths without service-role bypass",
+        "Verifies migration repeatability and representative queries"
+      ],
+      "forbidden": [
+        "Uses repository mocks as RLS proof",
+        "Uses service role for tenant policy tests"
+      ]
     }
   ]
 }

@@ -29,7 +29,12 @@ required_files=(
   evals/fixtures/gate-pressure.md
   evals/fixtures/release-evidence.md
   evals/fixtures/small-fix-routing.md
+  evals/fixtures/architecture-overengineering.md
+  evals/fixtures/ai-trust-boundary.md
+  evals/fixtures/database-integration-boundary.md
   scripts/check_links.py
+  scripts/check-update.mjs
+  scripts/validate-repo.mjs
   tests/test_check_links.py
   playbook/01-discovery-prd.md
   playbook/02-architecture.md
@@ -51,6 +56,23 @@ required_files=(
   templates/RELEASE-CHECKLIST.md
   skills/engineer-project/SKILL.md
   skills/engineer-project/agents/openai.yaml
+  skills/engineer-project/references/discovery-prd.md
+  skills/engineer-project/references/architecture.md
+  skills/engineer-project/references/frontend.md
+  skills/engineer-project/references/backend-data.md
+  skills/engineer-project/references/ai-rag-integrations.md
+  skills/engineer-project/references/security-testing.md
+  skills/engineer-project/references/deployment-operations.md
+  skills/engineer-project/assets/templates/PRD.md
+  skills/engineer-project/assets/templates/TDD.md
+  skills/engineer-project/assets/templates/ROADMAP.md
+  skills/engineer-project/assets/templates/ADR.md
+  skills/engineer-project/assets/templates/RELEASE-CHECKLIST.md
+  .claude-plugin/plugin.json
+  .claude-plugin/marketplace.json
+  .codex-plugin/plugin.json
+  .agents/plugins/marketplace.json
+  hooks/hooks.json
 )
 
 for file in "${required_files[@]}"; do
@@ -61,7 +83,7 @@ for file in "${required_files[@]}"; do
 done
 
 python3 -m json.tool "$repo_root/evals/evals.json" >/dev/null
-python3 -m unittest "$repo_root/tests/test_check_links.py"
+python3 -m unittest discover -s "$repo_root/tests"
 python3 "$repo_root/scripts/check_links.py" "$repo_root"
 
 if rg -n 'TODO|Sinag|PhishAlert|CodeGraph|ColinaHealth|FleetOS|Converter' \

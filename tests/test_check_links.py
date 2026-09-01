@@ -38,6 +38,14 @@ class CheckLinksTest(unittest.TestCase):
             )
             self.assertEqual([], check_links.find_broken_links(root))
 
+    def test_ignores_dependency_directories(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            dependency = root / "node_modules" / "package"
+            dependency.mkdir(parents=True)
+            (dependency / "README.md").write_text("[missing](missing.md)")
+            self.assertEqual([], check_links.find_broken_links(root))
+
 
 if __name__ == "__main__":
     unittest.main()

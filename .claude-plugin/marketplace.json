@@ -1,0 +1,22 @@
+{
+  "name": "engineering-playbook",
+  "owner": {
+    "name": "Asnari Pacalna",
+    "email": "asnaripacalna@gmail.com"
+  },
+  "description": "Marketplace for the Engineering Playbook skill.",
+  "plugins": [
+    {
+      "name": "engineer-project",
+      "version": "0.2.0",
+      "source": "./",
+      "description": "Guide software projects from discovery through verified release and operations.",
+      "author": { "name": "Asnari Pacalna" },
+      "homepage": "https://github.com/Kyaa-A/EngineeringPlaybook",
+      "repository": "https://github.com/Kyaa-A/EngineeringPlaybook",
+      "license": "MIT",
+      "keywords": ["engineering", "architecture", "testing", "security", "delivery"],
+      "category": "development"
+    }
+  ]
+}

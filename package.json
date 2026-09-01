@@ -1,0 +1,24 @@
+{
+  "name": "engineer-project",
+  "version": "0.2.0",
+  "private": true,
+  "files": [
+    ".agents",
+    ".claude-plugin",
+    ".codex-plugin",
+    "hooks",
+    "scripts/check-update.mjs",
+    "skills"
+  ],
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "validate": "node scripts/validate-repo.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "yaml": "2.9.0"
+  }
+}

@@ -14,13 +14,31 @@ It helps you:
 - test high-risk behavior against real infrastructure; and
 - release with evidence, monitoring, and rollback.
 
+## Install
+
+### Claude Code
+
+```text
+/plugin marketplace add Kyaa-A/EngineeringPlaybook
+/plugin install engineer-project@engineering-playbook
+```
+
+### Codex CLI
+
+```bash
+codex plugin marketplace add Kyaa-A/EngineeringPlaybook --ref main
+codex plugin add engineer-project@engineering-playbook
+```
+
+The managed plugin checks for a newer version at session start at most once every 24 hours. It only prints manual update commands; it never updates itself. Set `ENGINEER_PROJECT_UPDATE_CHECK=0` to opt out.
+
 ## Start a project
 
 Tell your coding agent:
 
-> Read `AGENTS.md` in the EngineeringPlaybook repository. Use the `engineer-project` skill and guide this idea through discovery, PRD, technical design, roadmap, implementation, verification, and release.
+> Use `engineer-project` and guide this idea through discovery, PRD, technical design, roadmap, implementation, verification, and release.
 
-Do not copy the entire repository into every project. Link to it, install the skill, or tell the agent its local path.
+The installed skill is self-contained. It includes the lifecycle guidance, focused prompts, and artifact templates it routes to.
 
 ## Repository map
 
@@ -40,19 +58,16 @@ Do not copy the entire repository into every project. Link to it, install the sk
 - **Cursor:** the thin rule under `.cursor/rules/` points to the canonical `AGENTS.md`.
 - **GitHub Copilot:** `.github/copilot-instructions.md` points to the same workflow.
 
-## Install the skill locally
-
-```bash
-cp -R skills/engineer-project ~/.agents/skills/engineer-project
-```
-
-Claude Code users can install the same folder under `~/.claude/skills/engineer-project`.
-
 ## Validate
 
 ```bash
+npm ci
+npm test
+npm run validate
 ./scripts/validate.sh
 ```
+
+For a plain manual install, copy `skills/engineer-project` to `~/.agents/skills/engineer-project` or `~/.claude/skills/engineer-project`.
 
 If your Codex installation includes the official skill creator, also run its `quick_validate.py` against `skills/engineer-project`.
 
@@ -60,7 +75,7 @@ If your Codex installation includes the official skill creator, also run its `qu
 
 Start with the [Support Knowledge Assistant example](examples/support-knowledge-assistant/README.md) to see requirements traced through design, roadmap, and release evidence.
 
-Use the [behavioral evaluation protocol](evals/README.md) to compare baseline agent behavior with the `engineer-project` skill enabled. The fixtures test discovery routing, pressure to bypass planning gates, release claims without evidence, and lightweight handling of a small correction.
+Use the [behavioral evaluation protocol](evals/README.md) to compare baseline agent behavior with the `engineer-project` skill enabled. The fixtures cover discovery routing, gate pressure, unsupported release claims, small corrections, overengineering, AI trust boundaries, and real database integration boundaries.
 
 ## Community
 

@@ -1,0 +1,28 @@
+{
+  "name": "engineer-project",
+  "version": "0.2.0",
+  "description": "Guide software projects from discovery through verified release and operations.",
+  "author": {
+    "name": "Asnari Pacalna",
+    "url": "https://github.com/Kyaa-A"
+  },
+  "homepage": "https://github.com/Kyaa-A/EngineeringPlaybook",
+  "repository": "https://github.com/Kyaa-A/EngineeringPlaybook",
+  "license": "MIT",
+  "keywords": ["engineering", "architecture", "testing", "security", "delivery"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Engineering Playbook",
+    "shortDescription": "Engineer projects with evidence",
+    "longDescription": "Route software work through proportional discovery, architecture, implementation, security, testing, release, and operational gates.",
+    "developerName": "Asnari Pacalna",
+    "category": "Productivity",
+    "capabilities": ["Skills"],
+    "websiteURL": "https://github.com/Kyaa-A/EngineeringPlaybook",
+    "defaultPrompt": [
+      "Turn this product idea into an executable engineering plan.",
+      "Review this architecture for unnecessary complexity and missing boundaries.",
+      "Verify this project is ready to release with fresh evidence."
+    ]
+  }
+}
